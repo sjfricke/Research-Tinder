@@ -11,21 +11,27 @@
       <form name="form" method="" action="" novalidate>
         <label for="name">Name :</label>
         <br>
-        <input id="name" name="name" type="text" ng-model="user.name">
+        <input id="name" name="name" type="text">
         <br>
         <label for="email">Email :</label>
         <br>
-        <input id="email" name="email" type="email" ng-model="user.email">
+        <input id="email" name="email" type="email">
+        <br>
+				<label for="gender">Gender:</label>
+        <br>
+        <input type="radio" name="gender" value="Male"> Male<br>
+        <input type="radio" name="gender" value="Female" checked> Female<br>
+        <input type="radio" name="gender" value="Any" checked> Either<br>
         <br>
         <label for="age">Age :</label>
         <br>
-        <input id="age" name="age" type="age" ng-model="user.age">
+        <input id="age" name="age" type="text">
         <br>
         <label for="weight">Weight :</label>
         <br>
-        <input id="weight" name="weight" type="weight" ng-model="user.weight">
+        <input id="weight" name="weight" type="text">
         <br>
-        <input type="submit" value="Send">
+        <input type="submit" id = "sendJoin" value="Send">
       </form>
     </div>
 	</body>

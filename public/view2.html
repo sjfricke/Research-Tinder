@@ -11,9 +11,21 @@
     <form name="form" method="" action="" novalidate>
       <label for="name" id = "nameLabel">Name:</label>
       <br>
-      <input id="name" name="name" type="text" ng-model="user.name">
+      <input id="name" name="name" type="text">
       <br>
       <div class = "requirements">
+        <label for="title">Title:</label>
+        <br>
+        <input id="title" name="title" type="text">
+        <br>
+        <label for="description">Description:</label>
+        <br>
+        <textarea rows="5" cols="5" id="description" name="description"></textarea>
+        <br>
+        <label for="age">Age Range:</label>
+        <br>
+        <input id="age" name="age" type="text">
+        <br>
         <label for="gender">Gender:</label>
         <br>
         <input type="radio" name="gender" value="Male"> Male<br>
@@ -22,18 +34,18 @@
         <br>
         <label for="age">Age Range:</label>
         <br>
-        <input id="age" name="age" type="text" ng-model="user.email">
+        <input id="age" name="age" type="text">
         <br>
         <label for="weight">Weight Range:</label>
         <br>
-        <input id="weight" name="weight" type="text" ng-model="user.weight">
+        <input id="weight" name="weight" type="text">
         <br>
         <label for="university">University:</label>
         <br>
         <select type="select" ng-model="pick" ng-options="pickName.Name for pickName in results" ng-click="getID(pick);">
             </select>
         <br>
-        <input type="submit" value="Send">
+        <input type="submit" id = "sendCreate" value="Send">
       </div>
     </form>
   </div>
