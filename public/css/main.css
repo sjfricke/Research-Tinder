@@ -79,10 +79,10 @@
 	body {
 		height: 100%;
 		background-color: #ffffff;
-		background-image: url("../imagesoverlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../images/bg.jpg");
-		background-image: url("../imagesoverlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../images/bg.jpg");
-		background-image: url("../imagesoverlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../images/bg.jpg");
-		background-image: url("../imagesoverlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("./images/bg.jpg");
+		background-image: url("../images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+		background-image: url("../images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+		background-image: url("../images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+		background-image: url("../images/overlay.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
 		background-repeat: repeat,			no-repeat,			no-repeat;
 		background-size: 100px 100px, cover,				cover;
 		background-position: top left,		center center,		bottom center;
@@ -341,16 +341,11 @@
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
 		display: block;
 		float: left;
-		margin-right: -2em;
-		opacity: 0;
+		font-size: 1.3em;
 		width: 1em;
-		z-index: -1;
+		margin-left: 25%;
 	}
 
 		input[type="checkbox"] + label,
@@ -359,7 +354,7 @@
 			color: #414f57;
 			cursor: pointer;
 			display: inline-block;
-			font-size: 1em;
+			font-size: 1.3em;
 			font-weight: 300;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
@@ -587,21 +582,19 @@
 			margin-left: 1.5em;
 		}
 
-	#nameLabel{
-		margin-top: 1em;
-	}
+		#nameLabel{
+			margin-top:1.5em;
+		}
 
 /* Button */
+
+	input
 
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
 	button,
 	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
 		-moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -616,16 +609,29 @@
 		color: #414f57 !important;
 		cursor: pointer;
 		text-align: center;
-		text-decoration: none;
 		white-space: nowrap;
 		margin-left: 25%;
 	}
 
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
+	#sendCreate{
+		margin-left:25%;
+		width: 50%;
+		text-align: center;
+		background-color: #fff;
+	}
+
+	#sendJoin{
+		margin-left:25%;
+		width:50%;
+		text-align: center;
+		background-color: #fff;
+	}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		.button {
 			border-color: #ff7496;
 			color: #ff7496 !important;
 		}
@@ -827,4 +833,9 @@
 
 		body.is-ie #wrapper {
 			height: 100%;
+		}
+
+		#description !important{
+			height: 6em;
+			word-wrap: break-word;
 		}
