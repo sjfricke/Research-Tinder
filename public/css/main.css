@@ -257,8 +257,8 @@
 	label {
 		color: #313f47;
 		display: block;
-		font-size: 0.9em;
-		margin: 0 0 0.75em 0;
+		font-size: 1.5em;
+		margin: 0 25% 0 25%;
 	}
 
 	input[type="text"],
@@ -274,7 +274,8 @@
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
-		width: 100%;
+		width: 50%;
+		margin-left: 25%;
 	}
 
 		input[type="text"]:invalid,
@@ -586,6 +587,10 @@
 			margin-left: 1.5em;
 		}
 
+	#nameLabel{
+		margin-top: 1em;
+	}
+
 /* Button */
 
 	input[type="submit"],
@@ -613,6 +618,7 @@
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
+		margin-left: 25%;
 	}
 
 		input[type="submit"]:hover,
