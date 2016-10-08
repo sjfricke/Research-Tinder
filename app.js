@@ -36,7 +36,7 @@ var api = require('./routes/api');
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser());
-    app.use(express.static('app'));
+    app.use(express.static('public'));
 
     // required for passport
     app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
@@ -49,8 +49,8 @@ require('./routes/auth.js')(app, passport); // load our routes and pass in our a
 //-------------------------Express and Passport JS configs-----------------------------//
 require('./config/passport')(passport); // pass passport for configuration
 
-app.get('/search', function(req, res) {
-  req.sendFile("index.html");
+app.get('/', function(req, res) {
+  req.render("index");
 });
 
 //-------------------------POST ROUTES-----------------------------//
