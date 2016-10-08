@@ -5,6 +5,7 @@
     var Schema = mongoose.Schema;
 
     var StudySchema = new Schema({
+        title: String,
         university: Number,
         minAge: Number,
         maxAge: Number,
@@ -17,7 +18,7 @@
         detail: String,
         phone: String,
         email: String
-    });
+    }, {"collection": "Study"});
 
 module.exports = mongoose.model('Study', StudySchema);
 

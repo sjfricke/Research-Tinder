@@ -1,11 +1,11 @@
+//-------------------------Setup required packages/files -----------------------------//
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var logger = require('morgan'); //used to log in console window all request
+var cookieParser = require('cookie-parser'); //Parse Cookie header and populate req.cookies
+var bodyParser = require('body-parser'); //allows the use of req.body in POST request
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000; //Grabs port number from enviroment for things like Azure, otherwise port 3000
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -15,14 +15,23 @@ var flash = require('connect-flash');
 var session = require('express-session');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/users');  
+//var io = require('./sockets').listen(http) //allows for sockets on the HTTP server instance
 
-var configDB = require('./config/database.js');
-var MongooseDB = mongoose.connect(configDB.url).connection;
+//-------------------------Setup Mongo-----------------------------//
+var credientals = require('./config/credientals.js');
+
+//sets up Mongoose
+var mongoose = require('mongoose'); //added for Mongo support
+var MongooseDB = mongoose.connect(credientals.DB_URL).connection; //makes connection
 MongooseDB.on('error', function(err) { console.log(err.message); console.log("Is MongoDB Running?"); });
 MongooseDB.once('open', function() {
   console.log("mongooseDB connection open");
 });
+
+//-------------------------getting funtions/routes from other files-----------------------------//
+
+
 
 var app = express();
 
@@ -51,30 +60,14 @@ var api = require('./routes/api');
 app.use('/api', api); //sets the API used to access the Database
 
 
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err,
-    });
-  });
-}
-
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {},
-  });
-});
 
 app.listen(port);
+
+//var http = require('http').Server(app); //Node.js module creates an instance of HTTP to make calls to Pi
+//
+//http.listen(port, function() {
+//    console.log('listening on *: ' + port);
+//});
+
 
 module.exports = app;

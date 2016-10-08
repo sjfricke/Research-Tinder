@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp" > 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Research Tinder</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
+<% include partials/head %>
 
+  <body>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="jumbotron text-center">
+        <h1>Express Authentication</h1>
+        <p class="lead">A simple authentication app built with express, node & passport.</p>
 
-  <div ng-view></div>
+        <a href="/login" class="btn btn-default"><span class="fa fa-sign-in"></span> Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
 
+      </div>
 
-  <script src="lib/angular.min.js"></script>
-  <script src="lib/angular-route.min.js"></script>
-  <script src="javascript/app.js"></script>
-  <script src="javascript/controller.js"></script>
-</body>
+    </div>
+  </body>
 </html>

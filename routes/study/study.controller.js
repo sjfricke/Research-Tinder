@@ -14,12 +14,22 @@
         });
     };
     
+    module.exports.getID = function(req, res) { 
+        Study.findOne({_id : req.params.ID}, function (err, post) {
+            if (err) {
+                console.error(err);
+                return res.status(500).send(err);
+            }            
+            res.json(post);
+        });
+    };
+    
     module.exports.getUniversityID = function(req, res) { 
         Study.find({ "university" : req.params.ID}, function (err, post) {
             if (err) {
                 console.error(err);
                 return res.status(500).send(err);
-            }
+            }            
             res.json(post);
         });
     };
