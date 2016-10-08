@@ -9,8 +9,7 @@
         id: Number,
         age: Number,
         gender: String,
-        location: String,
-        detailInfo: {},       
+        UniversityID: Number    
     });
 
 module.exports = mongoose.model('Participant', ParticipantSchema);
