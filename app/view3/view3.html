@@ -1,3 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+	<head>
+		<title>Join a Study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+
+    <div class="container" ng-app="formApp">
+      <form name="form" method="" action="" novalidate>
+        <label for="name">Name :</label>
+        <br>
+        <input id="name" name="name" type="text" ng-model="user.name">
+        <br>
+        <label for="email">Email :</label>
+        <br>
+        <input id="email" name="email" type="email" ng-model="user.email">
+        <br>
+        <label for="age">Age :</label>
+        <br>
+        <input id="age" name="age" type="age" ng-model="user.age">
+        <br>
+        <label for="weight">Weight :</label>
+        <br>
+        <input id="weight" name="weight" type="weight" ng-model="user.weight">
+        <br>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+
+	</body>
 </html>
