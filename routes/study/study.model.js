@@ -5,13 +5,18 @@
     var Schema = mongoose.Schema;
 
     var StudySchema = new Schema({
-        location: String,
+        university: Number,
         minAge: Number,
         maxAge: Number,
+        gender: String,
         compesation: Number,
         length: Number,
         numberOfVisit: Number,
-        detailInfo: {},       
+        startDate: Date,
+        endDate: Date,
+        detail: String,
+        phone: String,
+        email: String
     });
 
 module.exports = mongoose.model('Study', StudySchema);
