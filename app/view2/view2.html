@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Make a Study</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <div class="container" ng-app="formApp">
+    <form name="form" method="" action="" novalidate>
+      <label for="name">Name :</label>
+      <br>
+      <input id="name" name="name" type="text" ng-model="user.name">
+      <br>
+      <div class = "requirements">
+        <label for="gender">Gender :</label>
+          <input type="checkbox" name="gender" value="Male"> Male<br>
+          <input type="checkbox" name="gender" value="Female" checked> Female<br>
+          <input type="checkbox" name="gender" value="Either" checked> Either<br>
+        <br>
+        <input id="email" name="email" type="email" ng-model="user.email">
+        <br>
+        <label for="age">Age :</label>
+        <br>
+        <input id="age" name="age" type="age" ng-model="user.age">
+        <br>
+        <label for="weight">Weight :</label>
+        <br>
+        <input id="weight" name="weight" type="weight" ng-model="user.weight">
+        <br>
+        <input type="submit" value="Send">
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -12,7 +12,3 @@ angular.module('myApp.view2', ['ngRoute'])
 .controller('View2Ctrl', [function() {
 
 }]);
-
-var formApp = angular.module('formApp', []);
-formApp.controller('FormCtrl', ['$scope', function($scope) {
-}]);
