@@ -9,6 +9,11 @@ angular.module('myApp.view3', ['ngRoute'])
   });
 }])
 
-.controller('View3Ctrl', [function() {
-
+.controller('View3Ctrl', [function($scope, $http) {
+  $http.get("http://spencerfricke.com:3000/api/university/byState/AL")
+    .then(function(response) {
+        $scope.result = response.data;
+        console.log(response);
+        console.log(response.data);
+    });
 }]);

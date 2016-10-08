@@ -9,7 +9,7 @@ var http = require('http').Server(app); //Node.js module creates an instance of 
 var io = require('./sockets').listen(http) //allows for sockets on the HTTP server instance
 var port = process.env.PORT || 3000; //Grabs port number from enviroment for things like Azure, otherwise port 3000
 var passport = require('passport'); //used for managing accounts
-var flash    = require('connect-flash'); 
+var flash    = require('connect-flash');
 var session = require('express-session');
 
 //-------------------------Setup Mongo-----------------------------//
@@ -22,7 +22,7 @@ MongooseDB.on('error', function(err) { console.log(err.message); console.log("Is
 MongooseDB.once('open', function() {
   console.log("mongooseDB connection open");
 });
-      
+
 //-------------------------getting funtions/routes from other files-----------------------------//
 //api to mongoose calls
 var api = require('./routes/api');
@@ -36,7 +36,7 @@ var api = require('./routes/api');
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser());
-    app.use(express.static('public'));
+    app.use(express.static('app'));
 
     // required for passport
     app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
@@ -49,7 +49,9 @@ require('./routes/auth.js')(app, passport); // load our routes and pass in our a
 //-------------------------Express and Passport JS configs-----------------------------//
 require('./config/passport')(passport); // pass passport for configuration
 
-
+app.get('/search', function(req, res) {
+  req.sendFile("index.html");
+});
 
 //-------------------------POST ROUTES-----------------------------//
 app.use('/api', api); //sets the API used to access the Database

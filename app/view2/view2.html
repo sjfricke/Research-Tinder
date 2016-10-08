@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <div class="container" ng-app="formApp">
+  <div class="container">
     <form name="form" method="" action="" novalidate>
       <label for="name">Name :</label>
       <br>
@@ -15,11 +15,14 @@
       <br>
       <div class = "requirements">
         <label for="gender">Gender :</label>
-          <input type="checkbox" name="gender" value="Male"> Male<br>
-          <input type="checkbox" name="gender" value="Female" checked> Female<br>
-          <input type="checkbox" name="gender" value="Either" checked> Either<br>
         <br>
-        <input id="email" name="email" type="email" ng-model="user.email">
+        <input type="checkbox" name="gender" value="Male"> Male<br>
+        <input type="checkbox" name="gender" value="Female" checked> Female<br>
+        <input type="checkbox" name="gender" value="Either" checked> Either<br>
+        <br>
+        <label for="age">Age :</label>
+        <br>
+        <input id="age" name="age" type="age" ng-model="user.email">
         <br>
         <label for="age">Age :</label>
         <br>
